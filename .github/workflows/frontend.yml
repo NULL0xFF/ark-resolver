@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: null0xff/ark-frontend
+  IMAGE_NAME: ${{ github.repository }}-frontend
 
 jobs:
   build-and-push:
