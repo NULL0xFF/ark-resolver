@@ -1,0 +1,21 @@
+# Environment
+.env
+
+# Frontend
+frontend/node_modules/
+frontend/.svelte-kit/
+frontend/build/
+
+# Backend
+backend/build/
+backend/.gradle/
+backend/gradle/wrapper/gradle-wrapper.jar
+backend/server/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store

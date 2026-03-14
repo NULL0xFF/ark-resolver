@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: ghcr.io/null0xff/ark-backend:latest
+    expose:
+      - "8080"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 45s
+
+  frontend:
+    image: ghcr.io/null0xff/ark-frontend:latest
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
